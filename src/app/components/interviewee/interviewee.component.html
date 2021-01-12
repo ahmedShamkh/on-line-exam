@@ -1,0 +1,40 @@
+<form class="form-inline search">
+  <input
+    class="form-control mr-sm-2"
+    type="search"
+    name="search"
+    placeholder="Search for interviewee by name"
+    aria-label="Search"
+    style="width: 300px"
+  />
+  <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+    Search
+  </button>
+</form>
+<br />
+
+<!-- Show All Interviewees -->
+<table class="table table-hover mt-5 text-center">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone1</th>
+      <th scope="col">Phone2</th>
+      <th scope="col">Faculty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let inter of interviewees">
+      <td>{{ inter.Id }}</td>
+      <td>{{ inter.Name }}</td>
+      <td>{{ inter.Email }}</td>
+      <td>{{ inter.Address }}</td>
+      <td>{{ inter.Phone1 }}</td>
+      <td>{{ inter.Phone2 }}</td>
+      <td>{{ inter.Faculty }}</td>
+    </tr>
+  </tbody>
+</table>

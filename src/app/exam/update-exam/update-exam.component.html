@@ -1,0 +1,116 @@
+<!--<h4 class="ml-5">Update Exam</h4>-->
+<!--<form class="form text">-->
+<!--  <div class="form-group mb-2">-->
+<!--    <input-->
+<!--      type="text"-->
+<!--      class="form-control ml-5 mt-3 justify-content-center"-->
+<!--      placeholder="Exam Name"-->
+<!--      style="width: 30%;" name="exam"-->
+<!--      [value]="ExamName"-->
+<!--[(ngModel)]="ExamName"-->
+
+<!--    />-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <input-->
+<!--      type="text" name="time"-->
+<!--      class="form-control ml-5 mt-3 "-->
+<!--      placeholder="Exam Time"-->
+<!--      style="width: 30%;" [value]="Examtime "-->
+<!--    />-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <input-->
+<!--      type="text" name="finalGrade"-->
+<!--      class="form-control ml-5 mt-3 "-->
+<!--      placeholder="Exam Grade"-->
+<!--      style="width: 30%;"-->
+<!--      [value]="finalGrade "-->
+<!--    />-->
+<!--  </div>-->
+<!--</form>-->
+<!--<hr />-->
+
+<app-add-exam [examToUpdate]="examToUpdate" (reloadAllQuestion)="getallQuestion(examToUpdate.id)"></app-add-exam>
+<!-- All Questions -->
+<div class="all-questions">
+  <div class="conatiner">
+    <div class="row">
+      <div class="col-md-12">
+        <h5 class="text-center"><u class="mt-3">All Questions</u></h5>
+        <div *ngFor="let question of question1">
+          <form noValidate class="ssss">
+            <strong class="ml-5">Question:</strong>
+            <div
+              class="card p-4 ml-3 mt-3 "
+              style="width: 75%; margin-left: 12.5%; margin-bottom: 70px;
+               background-color: rgb(255,251,251);"
+            >
+              <div class="card-body p-4">
+                <div>
+                  <p style="display:flex; float:left">{{ question.text }}</p>
+                  <strong style="display:flex; float:right"
+                    >Weight: {{ question.weight }}</strong
+                  >
+                </div>
+              </div>
+              <div class="ml-3 p-3" style="background-color: #fffef2;">
+                <strong>Answer1: </strong>
+                <span>
+                  {{ question.answer1 }}
+                  <span
+                    style="background-color: #fffef2; display: flex; float: right; margin-right: 3px;"
+                    >{{ question.isAnswer1 }}</span
+                  ></span
+                >
+              </div>
+
+              <div class="ml-3 p-3" style="background-color: #fffef2;">
+                <strong>Answer2: </strong>
+                <span>
+                  {{ question.answer2 }}
+                  <span
+                    style="background-color: #fffef2; display: flex; float: right; margin-right: 3px;"
+                    >{{ question.isAnswer2 }}</span
+                  ></span
+                >
+              </div>
+
+              <div class="ml-3 p-3" style="background-color: #fffef2;">
+                <strong>Answer3: </strong>
+                <span>
+                  {{ question.answer3 }}
+                  <span
+                    style="background-color: #fffef2; display: flex; float: right; margin-right: 3px;"
+                    >{{ question.isAnswer3 }}</span
+                  ></span
+                >
+              </div>
+
+              <div class="ml-3 p-3" style="background-color: #fffef2;">
+                <strong>Answer4: </strong>
+                <span>
+                  {{ question.answer4 }}
+                  <span
+                    style="background-color: #fffef2; display: flex; float: right; margin-right: 3px; "
+                    >{{ question.isAnswer4 }}</span
+                  ></span
+                >
+              </div>
+              <input
+                type="submit"
+                value="Edit"
+                class="btn btn-info text-center mt-2" (click)="navigaToupdatequestion(question,question.id)"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="display">
+  <app-add-question  [display]="display"  [questionToUdate]="questionToUdate"  (displayBack)="playDisplay($event)" > </app-add-question>
+</div>
+<!--<app-add-question  [display]="display"  [questionToUdate]="questionToUdate" > </app-add-question>-->

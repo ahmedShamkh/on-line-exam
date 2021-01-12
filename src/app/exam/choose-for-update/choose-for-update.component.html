@@ -1,0 +1,27 @@
+<h2 class="text-center display-4 mt-3">Choose Exams To Update</h2>
+<table class="table table-hover mt-5 text-center">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Time</th>
+      <th scope="col">Final_Grade</th>
+      <th scope="col">Update_Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let exam of examdetails">
+      <td>{{ exam.id }}</td>
+      <td>{{ exam.name }}</td>
+      <td>{{ exam.time }}</td>
+     <td>{{ exam.finalGrade }}</td>
+      <td>
+        <input type="submit" value="Update" class="btn btn-info" (click)="navigateToUpdate(exam.id,exam.name,exam.time,exam.finalGrade)" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+
+<br /><br /><br />

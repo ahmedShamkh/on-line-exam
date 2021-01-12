@@ -1,0 +1,33 @@
+<h2 class="display-4 text-center">Start Your Exam</h2>
+
+<div class="container"  >
+  <small
+    ><strong style="background-color: antiquewhite;">Note:</strong> You can't
+    back to exam again if you choose next, or time is out.</small
+  >
+  <h4 class="text-center mt-3" style="background-color: antiquewhite;">
+    <b>We Wish Best Luck For You :-)</b>
+  </h4>
+</div>
+<hr />
+<!--*ngIf="ExamIsStarted"-->
+<div class="card d-flex justify-content-center"  *ngIf="!ExamIsStarted; else hidebutton">
+  <div class="card-body" style="display: flex; justify-content: space-between;">
+    <div >
+      <div class="">
+        <p>{{ selectedExam.name }}</p>
+      </div>
+      <div >
+        <input type="submit" value="start" class="btn btn-success" (click)="navigatoexampage(selectedExam)" />
+      </div>
+<!--      <ng-template >-->
+<!--      <input type="submit" value="start" class="btn btn-success" disabled>-->
+<!--      </ng-template>-->
+    </div>
+  </div>
+</div>
+<ng-template #hidebutton>
+  <app-exam-page [selectedExam]="selectedExam" ></app-exam-page>
+
+
+</ng-template>

@@ -1,0 +1,146 @@
+<div class="landing">
+  <div class="dark-overlay landing-inner text-light">
+    <div class="container">
+      <div class="container mt-5 m-*-auto ">
+        <div class="d-flex justify-content-center h-100">
+          <div class="user_card">
+            <div class="d-flex justify-content-center">
+              <div class="brand_logo_container">
+                <img
+                  src="../../assets/logo.gif"
+                  class="brand_logo"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center form_container">
+
+              <form class="mb-5">
+                <div class="input-group " style="margin-top: 50px;">
+                  <div class="input-group-append">
+                    <span class="input-group-text"
+                    ><i class="fas fa-user"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    name="Name"
+                    class="form-control input_user form-control-lg"
+                    value=""
+                    [(ngModel)]="Registration.name"
+                    required="Email Required"
+                    placeholder="username *"
+                  />*
+                </div>
+
+                <div class="input-group mb-2 mt-3">
+                  <div class="input-group-append">
+                    <span class="input-group-text"
+                    ><i class="fas fa-key"></i
+                    ></span>
+                  </div>
+
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control form-control-lg input_pass"
+                    value=""
+                    [(ngModel)]="Registration.email"
+                    placeholder="Email Address *"
+                  />
+                </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-append">
+                    <span class="input-group-text"
+                    ><i class="fas fa-phone"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    name="phone1"
+                    class="form-control form-control-lg input_phone"
+                    value=""
+                    [(ngModel)] = "Registration.phone_number1"
+                    placeholder="Phone Number1 *"
+                  />
+                </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-append">
+                    <span class="input-group-text"
+                    ><i class="fas fa-phone"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    name="phone1"
+                    class="form-control form-control-lg input_phone"
+                    value=""
+                    [(ngModel)] = "Registration.phone_number2"
+                    placeholder="Phone Number1"
+                  />
+                </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-append">
+                    <span class="input-group-text"
+                    ><i class="fas fa-university"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    name="faculty"
+                    class="form-control form-control-lg input_phone"
+                    value=""
+                    [(ngModel)] = "Registration.faculty"
+                    placeholder="Faculty *"
+                  />
+                </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-append">
+                    <span class="input-group-text"
+                    ><i class="fas fa-university"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    name="Address"
+                    class="form-control form-control-lg input_phone"
+                    value=""
+                    [(ngModel)] = "Registration.address"
+                    placeholder="Address *"
+                  />
+                </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-append">
+                    <span class="input-group-text"
+                    ><i class="fas fa-university"></i
+                    ></span>
+                  </div>
+                  <select (change)="selectChangeHandle($event)" class="browser dropdown">
+                    <option disable>Select Level</option>
+                    <option *ngFor="let level of Levels" [value]="Levels.indexOf(level)">{{level.type}}</option>
+                  </select>
+
+                  />
+                </div>
+
+
+                <div class="d-flex justify-content-center mt-3 login_container">
+                  <button type="button" name="button" class="btn login_btn"  (click)="creatInterviewee()" >
+                    Register
+                  </button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

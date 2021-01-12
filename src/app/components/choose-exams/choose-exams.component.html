@@ -1,0 +1,32 @@
+<table class="table table-hover mt-5 text-center">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Time</th>
+      <th scope="col">Final_Grade</th>
+      <th scope="col">Add_Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let exame of Exams">
+      <td>{{ exame.id }}</td>
+      <td>{{ exame.name }}</td>
+      <td>{{ exame.time }}</td>
+      <td>{{exame.finalGrade}}</td>
+      <td>
+
+        <input type="checkbox" class="form-check-input"   [value]="" (click)="getExamsID(exame.id)" id="exampleCheck1" />
+        <label class="form-check-label" for="exampleCheck1">Add</label>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+<input
+  type="submit"
+  value="Add Exams"
+  class="btn btn-primary mb-5 text-center ml-2"
+/>
+<br /><br /><br />

@@ -1,0 +1,56 @@
+
+<div class="landing">
+    <div class="dark-overlay landing-inner text-light">
+      <div class="container">
+        <div class="container mt-5 m-*-auto ">
+            <div class="d-flex justify-content-center h-100">
+              <div class="user_card">
+                <div class="d-flex justify-content-center">
+                  <div class="brand_logo_container">
+                    <img src="../../assets/logo.gif" class="brand_logo" alt="Logo" />
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center form_container">
+                  <form class="mb-5">
+                    <div class="input-group mb-3">
+                      <div class="input-group-append">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                      </div>
+                      <input
+                        type="text"
+                        name="adminUserName"
+                        class="form-control input_user"
+                        value=""
+                        required="Email Required"
+                        placeholder="Email"
+                        [(ngModel)]="Login.email"
+                      />
+                    </div>
+                    <div class="input-group mb-2 mt-3">
+                      <div class="input-group-append">
+                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                      </div>
+                      <input
+                        type="password"
+                        name="adminPassword"
+                        class="form-control input_pass"
+                        value=""
+                        placeholder="password"
+                        [(ngModel)]="Login.passward"
+                      />
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-3 login_container">
+                      <button type="button" name="button" class="btn login_btn"(click)=" authlog(Login)">
+                        Login
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>

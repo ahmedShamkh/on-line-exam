@@ -1,0 +1,133 @@
+
+
+<p-dialog header="Add Question" [(visible)]="display" styleClass="mydialog"   (onHide)="returnValeToParnt(display)" >
+
+  <div class="post-form" id="ahmed" >
+    <div
+      class="card card-info"
+      style="width: 75%; margin-left:12.5%; border-color: darkgray;"
+    >
+      <div class="card-header bg-dark text-white">
+        Update Question...
+      </div>
+      <div class="card-body">
+        <form noValidate>
+          <div class="form-group">
+          <textarea
+            placeholder="Add New Question... ?"
+            name="text"
+            class="form-control"
+            rows="3"  [(ngModel)]="question2.text"
+          ></textarea>
+          </div>
+          <label><strong>Answer1</strong></label>
+          <div class="form-group" style="width: 75%; display: flex;">
+          <textarea
+            placeholder="Answer ?"
+            name="answer1"
+            class="form-control"
+            rows="2" [(ngModel)]="question2.answer1"
+          ></textarea>
+            <div class="form-check">
+              <label
+                class="form-check-label"
+                style="float: right;
+              margin-left: 10px; margin-bottom: 15px;"
+              >
+                <input type="checkbox" class="form-check-input" name="c" [(ngModel)]="question2.isAnswer1"
+                       (change)= "ch1($event)"/>
+                <b>true</b>
+              </label>
+            </div>
+          </div>
+
+          <label><strong>Answer2</strong></label>
+          <div class="form-group" style="width: 75%; display: flex;">
+          <textarea
+            placeholder="Answer ?"
+            name="answer2"
+            class="form-control"
+            rows="2" [(ngModel)]="question2.answer2"
+          ></textarea>
+            <div class="form-check">
+              <label
+                class="form-check-label"
+                style="float: right;
+              margin-left: 10px; margin-bottom: 15px;"
+              >
+                <input type="checkbox" class="form-check-input" name="ch"
+                       [(ngModel)]="question2.isAnswer2"
+                       (change)= "ch2($event)"/>
+                <b>true</b>
+              </label>
+            </div>
+          </div>
+
+          <label><strong>Answer3</strong></label>
+          <div class="form-group" style="width: 75%; display: flex;">
+          <textarea
+            placeholder="Answer ?"
+            name="answer3"
+            class="form-control"
+            rows="2" [(ngModel)]="question2.answer3"
+          ></textarea>
+            <div class="form-check">
+              <label
+                class="form-check-label"
+                style="float: right;
+              margin-left: 10px; margin-bottom: 15px;"
+              >
+                <input type="checkbox" class="form-check-input" name="chk"
+                       [(ngModel)]="question2.isAnswer3"
+                       (change)= "ch3($event)"/>
+                <b>true</b>
+              </label>
+            </div>
+          </div>
+
+          <label><strong>Answer4</strong></label>
+          <div class="form-group" style="width: 75%; display: flex;">
+          <textarea
+            placeholder="Answer ?"
+            name="answer4"
+            class="form-control"
+            rows="2" [(ngModel)]="question2.answer4"
+          ></textarea>
+            <div class="form-check">
+              <label
+                class="form-check-label"
+                style="float: right;
+              margin-left: 10px; margin-bottom: 15px;"
+              >
+                <input type="checkbox" class="form-check-input" name="check"
+                       [(ngModel)]="question2.isAnswer4"
+                       (change)= "ch4($event)"/>
+                <b>true</b>
+              </label>
+            </div>
+          </div>
+
+
+            <button type="submit" class="btn btn-primary"  (click)="addQuestion()" [disabled]="switch">
+              Save
+            </button>
+
+
+
+            <button type="submit" class="btn btn-primary"  (click)="udateQuestion()" [disabled]="!switch">
+              Update
+            </button>
+
+          <button type="submit" class="btn btn-dark ml-2"  (click)="handleClear()" >
+            Cancel
+          </button>
+
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</p-dialog>
+
+

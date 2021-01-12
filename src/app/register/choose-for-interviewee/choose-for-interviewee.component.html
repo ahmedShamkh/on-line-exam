@@ -1,0 +1,32 @@
+<h2 class="text-center display-4 mt-3">Choose Exams For Interviewee</h2>
+<table class="table table-hover mt-5 text-center">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Time</th>
+      <th scope="col">Final Grade</th>
+      <th scope="col">choose Exam</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let exam of allExams">
+      <td>{{ exam.id }}</td>
+      <td>{{ exam.name }}</td>
+      <td>{{ exam.time }}</td>
+      <td>{{ exam.finalGrade}}</td>
+      <td>
+        <input type="submit" value="choose" class="btn btn-info" (click)="chooseExam(exam)" [disabled]="isSlected" />
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+<input type="submit" value="choose other exam" class="btn btn-info" (click)="chooseOtheErxam()" [disabled]="!isSlected" />
+<input
+  type="submit"
+  value="Start Exams"
+  class="btn btn-primary mb-5 text-center ml-3" (click)="NavigateToStartExam()"
+/>
+<br /><br /><br />

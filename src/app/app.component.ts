@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'online-exam';
+  display: any;
+
+  showDialog(): void {
+    this.display = true;
+  }
 }

@@ -1,0 +1,23 @@
+/*.mydialog {*/
+/*  width: 50vw;*/
+/*}*/
+
+/*@media screen and (max-width: 100em) {*/
+/*  .mydialog {*/
+/*    width: 705vw;*/
+/*  }*/
+/*}*/
+/*.ui-dialog {*/
+/*  width: 500px*/
+/*}*/
+/*.autoWidthDialog {*/
+/*  width: 500px !important;*/
+/*}*/
+
+::ng-deep .mydialog {
+  width: 70% !important;
+}
+::ng-deep #ahmed {
+  width: 100% !important;
+  position: center !important;
+}

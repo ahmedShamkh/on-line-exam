@@ -1,0 +1,74 @@
+<h4 class="ml-5">{{addOrUpdate}}</h4>
+<form class="form text">
+  <div class="form-group mb-2">
+
+    <input
+      type="text"
+      class="form-control ml-5 mt-3 justify-content-center"
+      placeholder="Exam Name" name="name"
+      [(ngModel)]="Exam1.name"
+      style="width: 30%;"
+      (change)="changeName()"
+    />
+  </div>
+  <div>
+    <input
+      type="text"
+      class="form-control ml-5 mt-3 "
+      placeholder="Exam Time"
+      name="time"
+      [(ngModel)]="Exam1.time"
+      style="width: 30%;"
+    />
+  </div>
+  <div>
+    <input
+      type="text"
+      class="form-control ml-5 mt-3 "
+      placeholder="Exam Grade"
+      name = "grade"
+      style="width: 30%;"
+      [(ngModel)]="Exam1.finalGrade"
+    />
+  </div>
+<div >
+  <button
+    type="submit"
+    class="btn btn-danger  mb-2 ml-5 mt-3 "
+    style="margin-left: 70px;"
+    name = "sub"
+    (click)="SaveExamName()"
+    [disabled]="switchBetweenAddUpdate"
+  >
+    Add Exam
+  </button>
+</div>
+
+<div >
+  <button
+    type="submit"
+    class="btn btn-danger  mb-2 ml-5 mt-3 "
+    style="margin-left: 70px;"
+    name = "cut"
+    (click)="UpdateExam()"
+    [disabled]="!switchBetweenAddUpdate"
+  >
+    Update Exame
+  </button>
+</div>
+
+</form>
+<hr />
+
+<button
+
+  type="submit"
+  class="btn btn-danger  mb-2 ml-5 mt-3 "
+  style="margin-left: 70px;"
+  name = "sub"
+  (click)="openTosave()"
+  [disabled]="!switchBtweenExamAndQuestion"
+>
+  Add question to this exam {{ExameName}}
+</button>
+<app-add-question [ExamId]="ExamId" [display]="display"  (displayBack)="playDisplay($event)"  > </app-add-question>
