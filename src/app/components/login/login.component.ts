@@ -25,6 +25,10 @@ ngOnInit(): void {
 
   authlog(Login: Admin): void {
     debugger
+    sessionStorage.setItem('auth', 'true');
+    console.log(this.Login2.id);
+    NavbarComponent.isAuthenticat = 'true';
+    this.router.navigateByUrl('home');
     this.loginservice.login(Login).subscribe(res => {
       console.log(res);
       if (!(res === null)) {
