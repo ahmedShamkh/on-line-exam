@@ -1,11 +1,11 @@
-<div class="all ">
-  <div class="container ">
-    <img src="assets/logo-roar-bikes.svg  "  style="width: 100%; height: 80px">
+<div class="all">
+  <img src="assets/logo-roar-bikes.svg  " />
+  <div class="contain">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-<!--        <a class="navbar-brand">-->
-<!--          Online-<span style="color: #0014ff"> Exam</span>-->
-<!--        </a>-->
+        <!--        <a class="navbar-brand">-->
+        <!--          Online-<span style="color: #0014ff"> Exam</span>-->
+        <!--        </a>-->
         <button
           class="navbar-toggler"
           type="button"
@@ -19,9 +19,12 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a
+                id="home"
                 class="nav-link"
                 [routerLink]="['/home']"
-                routerLinkActive="router-link-active"
+                routerLinkActive=""
+                (click)="onclick(f)"
+                #f
               >
                 Home
               </a>
@@ -31,33 +34,48 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a
+                id="register"
                 class="nav-link"
                 [routerLink]="['/register']"
-                routerLinkActive="router-link-active"
+                (click)="onclick(x)"
+                #x
               >
                 Register
               </a>
             </li>
           </ul>
 
-
-          <li class="navbar-nav dropdown  mr-auto" *ngIf="isAuthenticat()">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
+          <li class="navbar-nav dropdown mr-auto" *ngIf="isAuthenticat()">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               Exam
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" routerLink="exam/add-exam">Add Exam</a>
-              <a class="dropdown-item" routerLink="exam/chose-forUpdate">Update Exam</a>
+              <a class="dropdown-item" routerLink="exam/chose-forUpdate"
+                >Update Exam</a
+              >
               <!--          <div class="dropdown-divider"></div>-->
               <!--          <a class="dropdown-item" href="#">Something else here</a>-->
             </div>
           </li>
 
-
           <ul class="navbar-nav mr-auto" *ngIf="!isAuthenticat()">
             <li class="nav-item">
-              <a class="nav-link " routerLink="login">
+              <a
+                class="nav-link"
+                routerLink="login"
+                id="login"
+                (click)="onclick(c)"
+                #c
+              >
                 login
               </a>
             </li>
@@ -65,16 +83,11 @@
 
           <ul class="navbar-nav mr-auto" *ngIf="isAuthenticat()">
             <li class="nav-item">
-              <a class="nav-link " (click)="logout()">
-                Logout
-              </a>
+              <a class="nav-link" (click)="logout()"> Logout </a>
             </li>
           </ul>
-
-
         </div>
       </div>
     </nav>
-
   </div>
 </div>

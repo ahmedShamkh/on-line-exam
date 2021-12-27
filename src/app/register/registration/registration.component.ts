@@ -5,6 +5,7 @@ import {Interviewee} from '../../entity/Interviewee';
 import {Level} from '../../entity/Level';
 import {LoginComponent} from '../../components/login/login.component';
 import {RegistrationServiceService} from '../../servise/registration-service.service';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -48,8 +49,11 @@ export class RegistrationComponent implements OnInit {
       console.log(data1);
       this.Levels = data1;
     });
-
-
-
   }
+
+  submit(form : NgForm){
+    console.log(form.value);
+  }
+
+
 }

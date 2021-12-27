@@ -1,4 +1,4 @@
-body,
+/* body,
 html {
   margin: 0;
   padding: 0;
@@ -61,7 +61,7 @@ html {
 }
 
 .container {
-  margin-top: 30%;
+  margin-top: 5%;
 }
 .login_container {
   padding: 0 2rem;
@@ -117,4 +117,15 @@ img {
 
 .form-control::placeholder {
   color: #bbb !important;
+} */
+
+.container {
+  margin-top: 10%;
+}
+.btn-primary {
+  background-color: #00c98e;
+}
+
+input[type="checkbox"] {
+  background-color: #00c98e;
 }
