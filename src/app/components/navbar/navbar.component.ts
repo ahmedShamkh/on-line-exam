@@ -32,29 +32,29 @@ export class NavbarComponent implements OnInit   {
     console.log("do check")
   }
   ngAfterViewChecked(){
-    this.onclick(this.homeHtml);
+    // this.onclick(this.homeHtml);
   }
   clickMe(){
     console.log("link clicked")
   }
 
 
-  onclick(i) {
-    debugger;
-    console.log(this.router.url);
-    let button = document.querySelectorAll('a');
-    console.log(i.id);
-    button.forEach.call(button, function (a) {
-      document.getElementById('home').className = 'nav-link';
-      document.getElementById('register').className = 'nav-link';
-      document.getElementById('login').className = 'nav-link';
-      if (i.id === 'home') {
-        document.getElementById('home').className = 'activ';
-      } else if (i.id === 'register') {
-        document.getElementById('register').className = 'activ';
-      } else {
-        document.getElementById('login').className = 'activ';
-      }
-    });
-  }
+  // onclick(i) {
+  //   debugger;
+  //   console.log(this.router.url);
+  //   let button = document.querySelectorAll('a');
+  //   console.log(i.id);
+  //   button.forEach.call(button, function (a) {
+  //     document.getElementById('home').className = 'nav-link';
+  //     document.getElementById('register').className = 'nav-link';
+  //     document.getElementById('login').className = 'nav-link';
+  //     if (i.id === 'home') {
+  //       document.getElementById('home').className = 'activ';
+  //     } else if (i.id === 'register') {
+  //       document.getElementById('register').className = 'activ';
+  //     } else {
+  //       document.getElementById('login').className = 'activ';
+  //     }
+  //   });
+  // }
 }

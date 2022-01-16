@@ -28,6 +28,7 @@ import {question, Question} from './entity/question';
 import {DialogModule} from 'primeng/dialog';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AuthGuardServiceService} from './servise/auth-guard-service.service';
+import { DropdwonDirective } from './directive/dropdwon.directive';
 
 
 
@@ -43,6 +44,8 @@ import {AuthGuardServiceService} from './servise/auth-guard-service.service';
     ChooseExamsComponent,
 
     UpdateQuestionComponent,
+
+    DropdwonDirective,
 
 
 

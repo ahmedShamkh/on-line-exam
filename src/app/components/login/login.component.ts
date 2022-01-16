@@ -11,7 +11,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  @ViewChild('f') items: NgForm;
+  @ViewChild('f') form: NgForm;
 
   public Login: Admin = new Admin();
   private Login2: Admin = new Admin();
@@ -24,18 +24,18 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.items.setValue({
+    this.form.setValue({
       
     })
   }
 
-  authlog(Login: Admin): void {
+  authlog(form: NgForm): void {
     debugger;
     sessionStorage.setItem('auth', 'true');
     console.log(this.Login2.id);
     NavbarComponent.isAuthenticat = 'true';
     this.router.navigateByUrl('home');
-    this.loginservice.login(Login).subscribe((res) => {
+    this.loginservice.login(form.value).subscribe((res) => {
       console.log(res);
       if (!(res === null)) {
         sessionStorage.setItem('auth', 'true');

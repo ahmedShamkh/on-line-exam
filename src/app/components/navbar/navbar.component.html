@@ -23,9 +23,10 @@
                 class="nav-link"
                 [routerLink]="['/home']"
                 routerLinkActive=""
-                (click)="onclick(f)"
+                
                 #f
               >
+              <!-- (click)="onclick(f)" -->
                 Home
               </a>
             </li>
@@ -37,15 +38,16 @@
                 id="register"
                 class="nav-link"
                 [routerLink]="['/register']"
-                (click)="onclick(x)"
+               
                 #x
               >
+               <!-- (click)="onclick(x)" -->
                 Register
               </a>
             </li>
           </ul>
 
-          <li class="navbar-nav dropdown mr-auto" *ngIf="isAuthenticat()">
+          <li class="navbar-nav dropdown mr-auto" *ngIf="isAuthenticat()" appDropdwon>
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -73,10 +75,10 @@
                 class="nav-link"
                 routerLink="login"
                 id="login"
-                (click)="onclick(c)"
+               
                 #c
               >
-                login
+                login  <!-- (click)="onclick(c)" -->
               </a>
             </li>
           </ul>
